@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Helvetica", "sans-serif";
+  --text-96: 5.5rem;
+  --text-40: 2rem;
+  --text-50: 2.7rem;
+  --breakpoint-3xl: 1920px;
+  --color-grey-100: #F5F7F7; 
+  --color-grey-200: #DFDFDF;  
+  --color-grey-300: #F1F1F1;  
+  --color-back-100: #F5F5F5;
+  --color-red-100:  #FE5F58;
+  --color-red-200:  #EE534A;
+  --color-green-100: #46FB47;
+  --color-green-200: #28C840;
+  --color-green-300: #1EAA27;
+  --color-yellow-100: #FFBC30;
+  --color-yellow-200: #EAA92E;
+  /* ... */
+}
+
+
+::selection {
+  background-color: #46FB47; /* Gul markering */
+  color: #000; /* Sort tekst */
+}
+
+.digital-cursor {
+  cursor: url('/Media/Digital.svg') 30 30, auto; /* Justér 16 16, så det passer */
+}
+
+.visual-cursor {
+  cursor: url('/Media/Visual.svg') 30 30, auto; /* Justér 16 16, så det passer */
+}
+
+.experience-cursor {
+  cursor: url('/Media/Experience.svg') 30 30, auto; /* Justér 16 16, så det passer */
+}
+
+.land-cursor {
+  cursor: url('/Media/Land.svg') 30 30, auto; /* Justér 16 16, så det passer */
+}
+
+
+.think-cursor {
+  cursor: url('/Media/Think.svg') 50 50, auto; /* Justér 16 16, så det passer */
+}
+
+.multi-cursor {
+  cursor: url('/Media/Multi.svg') 30 30, auto; /* Justér 16 16, så det passer */
+}
+
+.trinket-cursor {
+  cursor: url('/Media/Trinket.svg') 30 30, auto; /* Justér 16 16, så det passer */
+}
+
+.hi-cursor {
+  cursor: url('/Media/Chat.svg') 30 30, auto; /* Justér 16 16, så det passer */
+}
+
+.insta-cursor {
+  cursor: url('/Media/Instagram.svg') 30 30, auto; /* Justér 16 16, så det passer */
+}
+
+.beha-cursor {
+  cursor: url('/Media/Behance.svg') 30 30, auto; /* Justér 16 16, så det passer */
+}
+
+.linked-cursor {
+  cursor: url('/Media/Linkedin.svg') 30 30, auto; /* Justér 16 16, så det passer */
+}
+
+.write-cursor {
+  cursor: url('/Media/Write.svg') 30 30, auto; /* Justér 16 16, så det passer */
+}
+
+.dont-cursor {
+  cursor: url('/Media/Dont.svg') 30 30, auto; /* Justér 16 16, så det passer */
+}
+
+.like-cursor {
+  cursor: url('/Media/like.svg') 30 30, auto; /* Justér 16 16, så det passer */
+}

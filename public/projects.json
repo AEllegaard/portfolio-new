@@ -1,0 +1,80 @@
+[
+    {
+        "dato": "21/06/2024",
+        "slug": "/Whileinbattleimfree",
+        "kategori": "Branding",
+        "title": "While In Battle I'm free",
+        "preview": "/Projects/Whileinbattlepreview.webp",
+        "hover": "/Projects/whilebattlepage.webm",
+        "description": "As a final project for my first year in Coded Design, I developed a visual identity, a poster and i produced a campaign website and an interactive feature for the dance performance While in battle I’m free, never free to rest by Cullberg and Hooman Sharifi.The project aimed to communicate the performance’s themes of collective transformation and the struggle for freedom through a bold visual identity and innovative digital experiences. The campaign site features an interactive element designed to engage audiences and connect art, urban spaces, and social discourse. The images used on the page are generated with MidJourney. It can be viewed here:",  
+        "link": "https://whileinbattleimfree.netlify.app",
+        "linktext": "While in battle I'm free",
+        "images": [
+            "/Projects/whilebattlepage.webm",
+            "/Projects/whileeye.webp",
+            "/Projects/aboutbattle.webp",
+            "/Projects/battleposter.webp",
+            "/Projects/posterbattle.webm"
+    ]
+    },
+    {
+        "dato": "15/04/2024",
+        "slug": "/studentidentification",
+        "kategori": "Branding",
+        "title": "Student Identification",
+        "preview": "/Projects/CD-studiekort.webp",
+        "hover": "/Projects/cdstudiekortprocess.webp",
+        "description": "After a week-long dive into Scientific Theory for Designers, Visual Rhetoric, and Semiotics, our team set out to apply our newfound knowledge by revamping a fundamental aspect of student life: the school ID. We aimed to elevate the design with the tools that we know; Processing. to reflect institutional prestige and foster personal pride. The existing IDs lack thoughtful design, missing the chance for students to proudly display their affiliation with the institution. As aspiring designers and scholars, we want our IDs to symbolize our academic journey and institutional excellence.",  
+        "images": [
+            "/Projects/allekort.webp",
+            "/Projects/CD-studiekort.webp",
+            "/Projects/process.webp",
+            "/Projects/helenakort.webp"
+    ]
+    },
+    {
+        "dato": "17/02/2025",
+        "slug": "/processingfun",
+        "kategori": "Fun projects",
+        "title": "Processing Fun",
+        "preview": "/Projects/CD-studiekort.webp",
+        "hover": "/Projects/cdstudiekortprocess.webp",
+        "description": "After a week-long dive into Scientific Theory for Designers, Visual Rhetoric, and Semiotics, our team set out to apply our newfound knowledge by revamping a fundamental aspect of student life: the school ID. We aimed to elevate the design with the tools that we know; Processing. to reflect institutional prestige and foster personal pride. The existing IDs lack thoughtful design, missing the chance for students to proudly display their affiliation with the institution. As aspiring designers and scholars, we want our IDs to symbolize our academic journey and institutional excellence.",  
+        "images": [
+            "/Projects/allekort.webp",
+            "/Projects/CD-studiekort.webp",
+            "/Projects/process.webp",
+            "/Projects/helenakort.webp"
+    ]
+    },
+    {
+        "dato": "10/09/2023",
+        "slug": "/Poseclassification",
+        "kategori": "Fun project",
+        "title": "Pose Classification",
+        "preview": "/Projects/codefilter.webp",
+        "hover": "/Projects/Draw_your_own_filter_2.webm",
+        "link": "https://editor.p5js.org/AEllegaard/full/WvK5iN74DT",
+        "linktext": "Try it here.",
+        "description": "I used generative AI as a Material for my drawing app using pose classification to attach drawings to the body. The project was part of the Intelligent Design course at DMJX, exploring generative AI as a creative material.",  
+        "images": [
+            "/Projects/Draw_your_own_filter_2.webm",
+            "/Projects/codefilter.webp",
+            "/Projects/shotfilter.webp"
+    ]
+    },
+    {
+        "dato": "10/09/2023",
+        "slug": "/desktopcleanup",
+        "kategori": "Fun project",
+        "title": "Desktop Cleanup",
+        "preview": "/Projects/deskcleanup.webp",
+        "hover": "/Projects/karstendesk-kopi.webm",
+        "description": "Starting the journey of learning to code we were assigned a task where we were asked to make something interactive. My idea stemmed from seeing our teachers desktop, I enjoy a clean desktop, not everyone does. Therefor i made it possible to clean it up with a 1:1 design. As an ode to Karsten. It was made with simple HTML, CSS and Javascript.",  
+        "images": [
+            "/Projects/karstendesk-kopi.webm",
+            "/Projects/deskcleanup.webp"
+    ]
+    }
+    
+]
