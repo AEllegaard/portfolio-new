@@ -1,10 +1,29 @@
 <script setup>
 import { createRouter, createWebHashHistory } from 'vue-router'
+import { onMounted, onUnmounted } from 'vue';
 
 import homeview from './components/homeview.vue'
 import aboutview from './components/aboutview.vue'
 import workview from './components/workview.vue'
 import contactview from './components/contactview.vue'
+
+const cursor = document.createElement('div');
+cursor.classList.add('custom-cursor');
+document.body.appendChild(cursor);
+
+const moveCursor = (e) => {
+  cursor.style.left = `${e.clientX}px`;
+  cursor.style.top = `${e.clientY}px`;
+};
+
+onMounted(() => {
+  document.addEventListener('mousemove', moveCursor);
+});
+
+onUnmounted(() => {
+  document.removeEventListener('mousemove', moveCursor);
+  document.body.removeChild(cursor);
+});
 </script>
 
 <template>

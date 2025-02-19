@@ -1,11 +1,11 @@
 <template>
-  <h1 class="font-display text-96 mx-4 mt-30 leading-[100px] tracking-tight">
+  <h1 class="font-display mx-4 mt-30 text-5xl md:text-96 md:leading-[100px] tracking-tight">
     All my projects - <br>
     <span class="text-green-100 like-cursor">That I like</span>.
   </h1>
 
   <!-- Liste over projekter -->
-  <div class="ml-8 mr-8 mt-40 font-display">
+  <div class="md:mx-8 mt-40 font-display">
     <div v-for="project in projects" :key="project.slug">
       <!-- Projekt header (Klikbar) -->
       <div 
@@ -15,11 +15,11 @@
         @mousemove="updatePosition"
         @mouseleave="hideHoverImage"
       >
-        <div class="container flex w-full items-center ml-4 font-display">
-          <h2 class="font-display font-light text-2xl">{{ project.dato }}</h2>
-          <h2 class="ml-45 font-display text-2xl">{{ project.kategori }}</h2>
-          <h2 class="ml-45 font-display text-2xl">{{ project.title }}</h2>
-          <img class="absolute right-100 w-22 h-8 object-cover" :src="project.preview" alt="">
+        <div class="container grid grid-cols-4 w-full items-center ml-4 font-display">
+          <h2 class="font-display text-sm font-light md:text-2xl">{{ project.dato }}</h2>
+          <h2 class="font-display text-sm md:text-2xl">{{ project.kategori }}</h2>
+          <h2 class="font-display text-sm md:text-2xl">{{ project.title }}</h2>
+          <img class=" w-18 md:w-22 h-8 object-cover justify-self-end" :src="project.preview" alt="">
         </div>
       </div>
 
