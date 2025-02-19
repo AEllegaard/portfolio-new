@@ -131,4 +131,10 @@
       max-height: 200px;
     }
   }
+
+  @media (max-width: 768px) {
+  .hover-image {
+    display: none;
+  }
+}
   </style>
