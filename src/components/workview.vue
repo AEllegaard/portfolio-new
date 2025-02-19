@@ -65,6 +65,7 @@
       :style="{ top: mouseY + 'px', left: mouseX + 'px' }"
       class="hover-media"/>
   </template>
+  <p class="mx-8 border-t-1">more to come...</p>
 </template>
 
 <script>

@@ -37,14 +37,20 @@
         "slug": "/processingfun",
         "kategori": "Fun projects",
         "title": "Processing Fun",
-        "preview": "/Projects/CD-studiekort.webp",
-        "hover": "/Projects/cdstudiekortprocess.webp",
-        "description": "After a week-long dive into Scientific Theory for Designers, Visual Rhetoric, and Semiotics, our team set out to apply our newfound knowledge by revamping a fundamental aspect of student life: the school ID. We aimed to elevate the design with the tools that we know; Processing. to reflect institutional prestige and foster personal pride. The existing IDs lack thoughtful design, missing the chance for students to proudly display their affiliation with the institution. As aspiring designers and scholars, we want our IDs to symbolize our academic journey and institutional excellence.",  
+        "preview": "/Projects/kebab.webp",
+        "hover": "/Projects/dronning.webm",
+        "description": "I have explored Processing to create interactive experiences that incorporate sound and webcam input. Through my projects, I have worked with generative visuals that react to audio, creating dynamic compositions where shapes and colors change based on sound amplitude and frequency. I have also experimented with webcam-based interactions, using live video feeds to influence visual elements in real time. Additionally, some of my digital sketches have transitioned from screen to paper through a pen plotter, bringing generative designs into the physical world. These projects showcase my ability to integrate different input modalities and bridge the gap between digital and tangible media.",  
         "images": [
-            "/Projects/allekort.webp",
-            "/Projects/CD-studiekort.webp",
-            "/Projects/process.webp",
-            "/Projects/helenakort.webp"
+            "/Projects/mirrorfade.webm",
+            "/Projects/kalaid.webm",
+            "/Projects/sound.webm",
+            "/Projects/dronning.webm",
+            "/Projects/pixelart.webm",
+            "/Projects/flowfield.webm",
+            "/Projects/kebab.webm",
+            "/Projects/penplot.webm",
+            "/Projects/scrubby.webm",
+            "/Projects/face.webm"
     ]
     },
     {
