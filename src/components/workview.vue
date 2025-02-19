@@ -132,7 +132,7 @@
     }
   }
 
-  @media (max-width: 768px) {
+  @media (hover: none) {
   .hover-image {
     display: none;
   }
