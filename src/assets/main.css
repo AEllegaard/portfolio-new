@@ -82,3 +82,9 @@
 .like-cursor {
   cursor: url('/Media/like.svg') 30 30, auto; /* Justér 16 16, så det passer */
 }
+
+@media (hover: none) {
+  .hover-image {
+    display: none;
+  }
+}
