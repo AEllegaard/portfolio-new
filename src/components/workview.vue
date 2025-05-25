@@ -45,6 +45,30 @@
             </template>
           </div>
         </div>
+
+        <!-- Hover preview -->
+<div 
+  v-if="hoverImage" 
+  class="hover-media min-w-60 max-h-60"
+  :style="{ top: mouseY + 'px', left: mouseX + 'px' }"
+>
+  <video 
+    v-if="hoverImage.endsWith('.webm') || hoverImage.endsWith('.mp4')" 
+    :src="hoverImage"
+    autoplay 
+    loop 
+    muted 
+    playsinline 
+    class="video-responsive"
+  ></video>
+  <img 
+    v-else 
+    :src="hoverImage" 
+    alt="Hover preview" 
+    class="object-contain max-w-60 max-h-60" 
+  />
+</div>
+
       </div>
     </div>
   </div>

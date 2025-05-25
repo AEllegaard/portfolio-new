@@ -18,6 +18,23 @@
     ]
     },
     {
+        "dato": "23/05/2025",
+        "slug": "/GameJam2025",
+        "kategori": "Game Design",
+        "title": "Mission Im-poo-ssible",
+        "preview": "/Projects/pooppreview.webp",
+        "hover": "/Projects/poosible.webm", 
+        "description": "During a four-week game design course taught by Henning Steinbock and Max Whrighton, we explored the fundamentals of game creation — from crafting engaging rules and player experiences to developing games in Unity. As part of the course, we participated in a one-day game jam, where my group created a lighthearted penguin fishing game. Later, we took part in a one-week game jam, during which we developed Mission Im-poo-ssible — a humorous game where you play as a dung beetle pushing a poo to the top of a mountain.", 
+        "images": [
+            "/Projects/pingu.webm",
+            "/Projects/playtesthenning.jpg",
+            "/Projects/processpoo.jpg",
+            "/Projects/pooppreview.webp",
+            "/Projects/pootest.webm",
+            "/Projects/poosible.webm"
+    ]
+    },
+    {
         "dato": "15/04/2024",
         "slug": "/studentidentification",
         "kategori": "Branding",
