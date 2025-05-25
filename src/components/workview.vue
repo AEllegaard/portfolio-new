@@ -40,7 +40,7 @@
               </video>
               <img v-else 
                 :src="media" 
-                class="object-contain self-start w-auto h-auto max-w-60 max-h-60" 
+                class="object-contain self-start w-auto h-auto max-w-80 max-h-60" 
                 alt="Project media"/>
             </template>
           </div>

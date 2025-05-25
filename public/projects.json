@@ -35,6 +35,23 @@
     ]
     },
     {
+        "dato": "06/03/2025",
+        "slug": "/ExperienceSite",
+        "kategori": "Experince Site",
+        "title": "Common Ground",
+        "preview": "/Projects/firstshotcommon.webp",
+        "hover": "/Projects/CommonGround.webm", 
+        "description": "As part of a course on experience sites, I explored the history of Greenland — from the arrival of the first Inuit populations to the present day. I was particularly struck by the idea of land ownership, especially considering that we all come from a shared history shaped by migration. These reflections led to my concept: an interactive experience site that presents migration as a universal human experience. The site combines interactive maps and data visualizations to give users insight into how migration has shaped our world — both historically and today.", 
+        "link": "https://commongroundsite.netlify.app/",
+        "linktext": "Experience Common Ground",
+        "images": [
+            "/Projects/CommonGround.webm",
+            "/Projects/firstskits.webp",
+            "/Projects/skiter.webp",
+            "/Projects/sidsteskits.webp"
+    ]
+    },
+    {
         "dato": "15/04/2024",
         "slug": "/studentidentification",
         "kategori": "Branding",
@@ -73,7 +90,7 @@
     {
         "dato": "10/09/2023",
         "slug": "/Poseclassification",
-        "kategori": "Fun project",
+        "kategori": "Machine Learning",
         "title": "Pose Classification",
         "preview": "/Projects/codefilter.webp",
         "hover": "/Projects/Draw_your_own_filter_2.webm",
