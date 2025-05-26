@@ -36,9 +36,9 @@ onUnmounted(() => {
       </div>
     </router-link>
     <div class="h-10 flex items-center justify-end md:px-9 w-full">
-      <router-link to="/about" class="md:text-xl bg-linear-to-t from-grey-300 to-grey-100 drop-shadow-sm px-4 m-2 md:m-4 rounded-md">About</router-link>
-      <router-link to="/work" class="md:text-xl bg-linear-to-t from-grey-300 to-grey-100 drop-shadow-sm px-4 m-2 md:m-4 rounded-md">Work</router-link>
-      <router-link to="/contact" class="md:text-xl bg-linear-to-t from-grey-300 to-grey-100 drop-shadow-sm px-4 ml-2 md:ml-5 md:ml-4 rounded-md">Contact</router-link>
+      <router-link to="/about" class="md:text-2xl bg-linear-to-t from-grey-300 to-grey-100 drop-shadow-sm px-4 m-2 md:m-4 rounded-md">About</router-link>
+      <router-link to="/work" class="md:text-2xl bg-linear-to-t from-grey-300 to-grey-100 drop-shadow-sm px-4 m-2 md:m-4 rounded-md">Work</router-link>
+      <router-link to="/contact" class="md:text-2xl bg-linear-to-t from-grey-300 to-grey-100 drop-shadow-sm px-4 ml-2 md:ml-5 md:ml-4 rounded-md">Contact</router-link>
     </div>
   </header>
 
