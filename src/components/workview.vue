@@ -26,49 +26,78 @@
 
         <!-- Udvidet projekt info -->
         <div v-if="expandedProjectSlug === project.slug" class="border-t-1 border-green-100">
-          <p class="mr-22 mt-4 ml-4 font-display text-1xl">{{ project.description }} <a class="text-green-100 underlined" target="_blank" :href="project.link">{{ project.linktext }}</a></p>        
-          <!-- Galleri med billeder og videoer -->
+          <p class="mr-22 mt-4 ml-4 font-display text-1xl">
+            {{ project.description }}
+            <a class="text-green-100 underlined" target="_blank" :href="project.link">{{ project.linktext }}</a>
+          </p>
+
+          <!-- Galleri -->
           <div class="flex flex-wrap gap-4 mt-10 ml-4 mb-4">
             <template v-for="(media, index) in project.images" :key="index">
-              <video v-if="media.endsWith('.webm') || media.endsWith('.mp4')" 
+              <video 
+                v-if="media.endsWith('.webm') || media.endsWith('.mp4')" 
                 :src="media" 
-                class="object-contain self-start w-auto h-auto max-w-60 max-h-60 video-responsive" 
+                class="object-contain self-start w-auto h-auto max-w-60 max-h-60 video-responsive cursor-pointer" 
                 autoplay 
                 loop 
                 muted 
-                playsinline>
-              </video>
-              <img v-else 
+                playsinline
+                @click="showModal(media)"
+              ></video>
+              <img 
+                v-else 
                 :src="media" 
-                class="object-contain self-start w-auto h-auto max-w-80 max-h-60" 
-                alt="Project media"/>
+                class="object-contain self-start w-auto h-auto max-w-80 max-h-60 cursor-pointer" 
+                alt="Project media"
+                @click="showModal(media)"
+              />
             </template>
           </div>
         </div>
 
         <!-- Hover preview -->
-<div 
-  v-if="hoverImage" 
-  class="hover-media min-w-60 max-h-60"
-  :style="{ top: mouseY + 'px', left: mouseX + 'px' }"
->
-  <video 
-    v-if="hoverImage.endsWith('.webm') || hoverImage.endsWith('.mp4')" 
-    :src="hoverImage"
-    autoplay 
-    loop 
-    muted 
-    playsinline 
-    class="video-responsive"
-  ></video>
-  <img 
-    v-else 
-    :src="hoverImage" 
-    alt="Hover preview" 
-    class="object-contain max-w-60 max-h-60" 
-  />
-</div>
+        <div 
+          v-if="hoverImage" 
+          class="hover-media min-w-60 max-h-60"
+          :style="{ top: mouseY + 'px', left: mouseX + 'px' }"
+        >
+          <video 
+            v-if="hoverImage.endsWith('.webm') || hoverImage.endsWith('.mp4')" 
+            :src="hoverImage"
+            autoplay 
+            loop 
+            muted 
+            playsinline 
+            class="video-responsive"
+          ></video>
+          <img 
+            v-else 
+            :src="hoverImage" 
+            alt="Hover preview" 
+            class="object-contain max-w-60 max-h-60" 
+          />
+        </div>
+      </div>
+    </div>
 
+    <!-- Modal for forstørrelse -->
+    <div v-if="modalMedia" style="background-color: rgba(130, 130, 130, 0.8);" class="fixed inset-0 z-50 flex justify-center items-center" @click.self="closeModal">
+      <div class="max-w-[90vw] max-h-[90vh] overflow-auto">
+        <video 
+          v-if="modalMedia.endsWith('.webm') || modalMedia.endsWith('.mp4')" 
+          :src="modalMedia" 
+          class="max-w-full max-h-[90vh]" 
+          autoplay 
+          loop 
+          muted 
+          playsinline
+        ></video>
+        <img 
+          v-else 
+          :src="modalMedia" 
+          alt="Full view" 
+          class="max-w-full max-h-[90vh]" 
+        />
       </div>
     </div>
   </div>
@@ -83,17 +112,23 @@ export default {
       hoverImage: null,
       mouseX: 0,
       mouseY: 0,
-      isTouchDevice: false
+      isTouchDevice: false,
+      modalMedia: null
     };
   },
   mounted() {
-    fetch('/projects.json') 
+    fetch('/projects.json')
       .then(response => response.json())
       .then(data => {
         this.projects = data;
       })
       .catch(error => console.error('Error fetching projects:', error));
     this.detectTouchDevice();
+
+    window.addEventListener('keydown', this.handleKeyDown);
+  },
+  beforeDestroy() {
+    window.removeEventListener('keydown', this.handleKeyDown);
   },
   methods: {
     toggleProject(slug) {
@@ -123,6 +158,17 @@ export default {
     },
     detectTouchDevice() {
       this.isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    },
+    showModal(media) {
+      this.modalMedia = media;
+    },
+    closeModal() {
+      this.modalMedia = null;
+    },
+    handleKeyDown(event) {
+      if (event.key === 'Escape') {
+        this.closeModal();
+      }
     }
   }
 };
