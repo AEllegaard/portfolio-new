@@ -17,18 +17,45 @@
           @mouseleave="handleMouseLeave"
         >
           <div class="container grid grid-cols-4 w-full items-center ml-4 font-display">
-            <h2 class="font-display text-sm font-light md:text-2xl">{{ project.dato }}</h2>
-            <h2 class="font-display text-sm md:text-2xl">{{ project.kategori }}</h2>
-            <h2 class="font-display text-sm md:text-2xl">{{ project.title }}</h2>
+            <h2
+  class="font-display font-light"
+  :class="{
+    'text-sm md:text-2xl': expandedProjectSlug !== project.slug,
+    'text-lg md:text-3xl': expandedProjectSlug === project.slug
+  }"
+>
+  {{ project.dato }}
+</h2>
+<h2
+  class="font-display"
+  :class="{
+    'text-sm md:text-2xl': expandedProjectSlug !== project.slug,
+    'text-lg md:text-3xl': expandedProjectSlug === project.slug
+  }"
+>
+  {{ project.kategori }}
+</h2>
+<h2
+  class="font-display"
+  :class="{
+    'text-sm md:text-2xl': expandedProjectSlug !== project.slug,
+    'text-lg md:text-3xl': expandedProjectSlug === project.slug
+  }"
+>
+  {{ project.title }}
+</h2>
+
             <img class="w-18 md:w-22 h-8 object-cover justify-self-end" :src="project.preview" alt="">
           </div>
         </div>
 
         <!-- Udvidet projekt info -->
         <div v-if="expandedProjectSlug === project.slug" class="border-t-1 border-green-100">
-          <p class="mr-22 mt-4 ml-4 font-display text-1xl">
+          <p class="mr-22 mt-4 ml-4 font-display text-2xl">
             {{ project.description }}
-            <a class="text-green-100 underlined" target="_blank" :href="project.link">{{ project.linktext }}</a>
+            <a class="text-green-100 underline" target="_blank" :href="project.link">
+  {{ project.linktext }}
+</a>
           </p>
 
           <!-- Galleri -->
@@ -82,11 +109,11 @@
 
     <!-- Modal for forstørrelse -->
     <div v-if="modalMedia" style="background-color: rgba(130, 130, 130, 0.8);" class="fixed inset-0 z-50 flex justify-center items-center" @click.self="closeModal">
-      <div class="max-w-[90vw] max-h-[90vh] overflow-auto">
+      <div class="max-w-full max-h-full overflow-auto">
         <video 
           v-if="modalMedia.endsWith('.webm') || modalMedia.endsWith('.mp4')" 
           :src="modalMedia" 
-          class="max-w-full max-h-[90vh]" 
+          class="max-w-full max-h-full" 
           autoplay 
           loop 
           muted 
@@ -96,7 +123,7 @@
           v-else 
           :src="modalMedia" 
           alt="Full view" 
-          class="max-w-full max-h-[90vh]" 
+          class="max-w-full max-h-full" 
         />
       </div>
     </div>
