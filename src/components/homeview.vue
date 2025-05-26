@@ -7,7 +7,7 @@ const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
     <h1 class="md:display-none font-display text-7xl md:text-9xl name-cursor">Anna Ellegaard</h1>
     <p class="font-display text-5xl md:text-96 md:leading-[100px] tracking-tighter">
       A designer based in <span class="text-green-100 land-cursor">Denmark</span> <br class=" desktop-break hidden md:inline">
-      with strong interests within <a href="/work" class="text-green-100 visual-cursor">visual <br class="desktop-break hidden md:inline">identity</a>, <a href="/work" class="text-green-100 experience-cursor">experience</a>- and <a href="/work" class="text-green-100 digital-cursor">digital design</a>.
+      with strong interests within <a href="/#/work" class="text-green-100 visual-cursor">visual <br class="desktop-break hidden md:inline">identity</a>, <a href="/work" class="text-green-100 experience-cursor">experience</a>- and <a href="/work" class="text-green-100 digital-cursor">digital design</a>.
     </p>
   </div>
 </template>
