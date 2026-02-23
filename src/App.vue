@@ -27,19 +27,25 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <header class="flex w-full bg-linear-to-t from-grey-200 to-grey-100 sticky top-0 z-50">
-    <router-link to="/" class="flex items-center">
-      <div class="flex items-center">
-        <button class="bg-red-100 border-red-200 border-1 rounded-full w-3 h-3 ml-1 md:ml-2"></button>
-        <button class="bg-yellow-100 border-yellow-200 border-1 rounded-full w-3 h-3 ml-1 md:ml-2"></button>
-        <button class="bg-green-200 border-green-300 border-1 rounded-full w-3 h-3 ml-1 md:ml-2"></button>
-      </div>
-    </router-link>
-    <div class="h-10 flex items-center justify-end md:px-9 w-full">
-      <router-link to="/about" class="md:text-2xl bg-linear-to-t from-grey-300 to-grey-100 drop-shadow-sm px-4 m-2 md:m-4 rounded-md">About</router-link>
-      <router-link to="/work" class="md:text-2xl bg-linear-to-t from-grey-300 to-grey-100 drop-shadow-sm px-4 m-2 md:m-4 rounded-md">Work</router-link>
-      <router-link to="/contact" class="md:text-2xl bg-linear-to-t from-grey-300 to-grey-100 drop-shadow-sm px-4 ml-2 md:ml-5 md:ml-4 rounded-md">Contact</router-link>
-    </div>
+  <header class="flex w-full sticky top-0 z-50 bg-back-100">
+    <nav class="h-10 flex items-center justify-end gap-6 md:gap-8 md:px-9 w-full py-6">
+      <router-link to="/" class="nav-item">
+        <span class="radio-circle"></span>
+        <span class="nav-text">Home</span>
+      </router-link>
+      <router-link to="/work" class="nav-item">
+        <span class="radio-circle"></span>
+        <span class="nav-text">Work</span>
+      </router-link>
+      <router-link to="/about" class="nav-item">
+        <span class="radio-circle"></span>
+        <span class="nav-text">About</span>
+      </router-link>
+      <router-link to="/contact" class="nav-item">
+        <span class="radio-circle"></span>
+        <span class="nav-text">Contact</span>
+      </router-link>
+    </nav>
   </header>
 
   <main>
@@ -47,6 +53,50 @@ onUnmounted(() => {
   </main>
 </template>
 
-<style>
+<style scoped>
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: #000;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.radio-circle {
+  width: 14px;
+  height: 14px;
+  border: 1.5px solid #000;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.radio-circle::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  background-color: #000;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.2s ease;
+}
+
+.nav-item.router-link-active .radio-circle::after {
+  width: 7px;
+  height: 7px;
+  opacity: 0.8;
+}
+
+.nav-text {
+  font-size: 1rem;
+}
+
 
 </style>
