@@ -69,7 +69,7 @@
     {
         "dato": "17/02/2025",
         "slug": "/processingfun",
-        "kategori": "Fun projects",
+        "kategori": "Creative Code",
         "title": "Processing Fun",
         "preview": "/Projects/kebab.webp",
         "hover": "/Projects/dronning.webm",
@@ -106,7 +106,7 @@
     {
         "dato": "10/09/2023",
         "slug": "/desktopcleanup",
-        "kategori": "Fun project",
+        "kategori": "Interactive",
         "title": "Desktop Cleanup",
         "preview": "/Projects/deskcleanup.webp",
         "hover": "/Projects/karstendesk-kopi.webm",

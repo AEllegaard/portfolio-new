@@ -1,57 +1,57 @@
 <template>
   <div>
-    <h1 class="font-display mx-4 mt-30 text-5xl md:text-96 md:leading-[100px] tracking-tight">
+    <h1 class="font-display font-light mx-4 mt-30 text-lg md:text-5xl md:leading-[70px] tracking-tight">
       All my projects - <br>
-      <span class="text-green-100 like-cursor">That I like</span>.
+      <span class="like-cursor bg-green-100 p-1">That I like.</span>
     </h1>
 
     <!-- Liste over projekter -->
-    <div class="md:mx-8 mt-40 font-display">
+    <div class="md:mx-4 mt-20 font-display">
       <div v-for="project in projects" :key="project.slug">
         <!-- Projekt header (Klikbar) -->
         <div 
-          class="flex border-t-1 h-14 w-full cursor-pointer"
+          class="flex h-10 w-full cursor-pointer"
           @click="toggleProject(project.slug)"
           @mouseover="handleMouseOver(project.hover)"
           @mousemove="updatePosition"
           @mouseleave="handleMouseLeave"
         >
-          <div class="container grid grid-cols-4 w-full items-center ml-4 font-display">
+          <div class="grid grid-cols-4 w-full items-center ml-2 font-display hover:opacity-50">
+            <h2
+              class="font-display font-light"
+              :class="{
+                'text-sm md:text-lg': expandedProjectSlug !== project.slug,
+                'text-lg md:text-lg': expandedProjectSlug === project.slug
+              }"
+            >
+              {{ project.title }}
+            </h2>
             <h2
   class="font-display font-light"
   :class="{
-    'text-sm md:text-2xl': expandedProjectSlug !== project.slug,
-    'text-lg md:text-3xl': expandedProjectSlug === project.slug
+    'text-sm md:text-lg': expandedProjectSlug !== project.slug,
+    'text-lg md:text-lg': expandedProjectSlug === project.slug
   }"
 >
   {{ project.dato }}
 </h2>
 <h2
-  class="font-display"
+  class="font-display font-light"
   :class="{
-    'text-sm md:text-2xl': expandedProjectSlug !== project.slug,
-    'text-lg md:text-3xl': expandedProjectSlug === project.slug
+    'text-sm md:text-lg': expandedProjectSlug !== project.slug,
+    'text-lg md:text-lg': expandedProjectSlug === project.slug
   }"
 >
   {{ project.kategori }}
 </h2>
-<h2
-  class="font-display"
-  :class="{
-    'text-sm md:text-2xl': expandedProjectSlug !== project.slug,
-    'text-lg md:text-3xl': expandedProjectSlug === project.slug
-  }"
->
-  {{ project.title }}
-</h2>
 
-            <img class="w-18 md:w-22 h-8 object-cover justify-self-end" :src="project.preview" alt="">
+            <img class="w-18 md:w-22 h-8 object-cover justify-self-end mr-2" :src="project.preview" alt="">
           </div>
         </div>
 
         <!-- Udvidet projekt info -->
-        <div v-if="expandedProjectSlug === project.slug" class="border-t-1 border-green-100">
-          <p class="mr-22 mt-4 ml-4 font-display text-2xl">
+        <div v-if="expandedProjectSlug === project.slug" class="border-t-0.5 border-green-100 ">
+          <p class="mr-22 mt-4 ml-4 font-display text-lg">
             {{ project.description }}
             <a class="text-green-100 underline" target="_blank" :href="project.link">
   {{ project.linktext }}

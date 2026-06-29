@@ -17,74 +17,44 @@
   --color-green-300: #1EAA27;
   --color-yellow-100: #FFBC30;
   --color-yellow-200: #EAA92E;
-  /* ... */
 }
-
 
 ::selection {
-  background-color: #46FB47; /* Gul markering */
-  color: #000; /* Sort tekst */
+  background-color: #46FB47;
+  color: #000;
 }
 
-.digital-cursor {
-  cursor: url('/Media/Digital.svg') 30 30, auto; /* Justér 16 16, så det passer */
+/* Fjern ALLE browser-cursors */
+* {
+  cursor: none !important;
 }
 
-.visual-cursor {
-  cursor: url('/Media/Visual.svg') 30 30, auto; /* Justér 16 16, så det passer */
+.custom-cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 99999;
+  background: white;
+  mix-blend-mode: difference;
+  transition: background 0.15s ease;
 }
 
-.experience-cursor {
-  cursor: url('/Media/Experience.svg') 30 30, auto; /* Justér 16 16, så det passer */
+.custom-cursor.cursor-active {
+  background: #46FB47;
 }
 
-.land-cursor {
-  cursor: url('/Media/Land.svg') 30 30, auto; /* Justér 16 16, så det passer */
+.hover-media {
+  position: fixed;
+  z-index: 9999; /* højere end ScrollSmoother */
+}
+
+.modal {
+  position: fixed;
+  z-index: 99999;
 }
 
 
-.think-cursor {
-  cursor: url('/Media/Think.svg') 50 50, auto; /* Justér 16 16, så det passer */
-}
 
-.multi-cursor {
-  cursor: url('/Media/Multi.svg') 30 30, auto; /* Justér 16 16, så det passer */
-}
-
-.trinket-cursor {
-  cursor: url('/Media/Trinket.svg') 30 30, auto; /* Justér 16 16, så det passer */
-}
-
-.hi-cursor {
-  cursor: url('/Media/Chat.svg') 30 30, auto; /* Justér 16 16, så det passer */
-}
-
-.insta-cursor {
-  cursor: url('/Media/Instagram.svg') 30 30, auto; /* Justér 16 16, så det passer */
-}
-
-.beha-cursor {
-  cursor: url('/Media/Behance.svg') 30 30, auto; /* Justér 16 16, så det passer */
-}
-
-.linked-cursor {
-  cursor: url('/Media/Linkedin.svg') 30 30, auto; /* Justér 16 16, så det passer */
-}
-
-.write-cursor {
-  cursor: url('/Media/Write.svg') 30 30, auto; /* Justér 16 16, så det passer */
-}
-
-.dont-cursor {
-  cursor: url('/Media/Dont.svg') 30 30, auto; /* Justér 16 16, så det passer */
-}
-
-.like-cursor {
-  cursor: url('/Media/like.svg') 30 30, auto; /* Justér 16 16, så det passer */
-}
-
-@media (hover: none) {
-  .hover-image {
-    display: none;
-  }
-}
