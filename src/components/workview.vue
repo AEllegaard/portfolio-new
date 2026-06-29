@@ -4,9 +4,26 @@
       All my projects - <br>
       <span class="like-cursor bg-green-100 p-1">That I like.</span>
     </h1>
-
+          
     <!-- Liste over projekter -->
     <div class="md:mx-4 mt-20 font-display">
+      <div class="grid grid-cols-4 w-full items-center ml-2 font-display border-b-1">
+            <h2
+              class="font-display font-light text-sm md:text-lg"
+            >
+              Title
+            </h2>
+            <h2
+              class="font-display font-light text-sm md:text-lg"
+            >
+              Date
+            </h2>
+            <h2
+              class="font-display font-light text-sm md:text-lg"
+            >
+            Category
+            </h2>
+          </div>
       <div v-for="project in projects" :key="project.slug">
         <!-- Projekt header (Klikbar) -->
         <div 
@@ -16,7 +33,7 @@
           @mousemove="updatePosition"
           @mouseleave="handleMouseLeave"
         >
-          <div class="grid grid-cols-4 w-full items-center ml-2 font-display hover:opacity-50">
+          <div class="grid grid-cols-4 w-full items-center mt-2 ml-2 font-display hover:opacity-50">
             <h2
               class="font-display font-light"
               :class="{
