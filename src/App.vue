@@ -36,7 +36,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <header class="flex w-full sticky top-0 z-50 bg-back-100">
+  <header class="flex w-full font-display font-light sticky top-0 z-50 bg-back-100">
     <nav class="h-10 flex items-center justify-end gap-6 md:gap-8 md:px-9 w-full py-6">
       <router-link to="/" class="nav-item">
         <span class="radio-circle"></span>
@@ -74,13 +74,13 @@ onUnmounted(() => {
 }
 
 .radio-circle {
-  width: 14px;
-  height: 14px;
+  width: 10px;
+  height: 10px;
   border: 1px solid #000;
   border-radius: 50%;
   display: inline-block;
   position: relative;
-  transition: all 0.2s ease;
+  transition: all 0.5s ease;
 }
 
 .radio-circle::after {
@@ -94,7 +94,7 @@ onUnmounted(() => {
   background-color: #000;
   border-radius: 50%;
   opacity: 0;
-  transition: all 0.2s ease;
+  transition: all 0.5s ease;
 }
 
 .nav-item.router-link-active .radio-circle::after {
@@ -104,6 +104,6 @@ onUnmounted(() => {
 }
 
 .nav-text {
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 </style>

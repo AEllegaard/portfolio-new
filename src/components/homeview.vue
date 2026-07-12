@@ -4,6 +4,7 @@ import { onMounted, onUnmounted, ref } from 'vue'
 // ============================================
 // KONFIGURATION - HER KAN DU TILFØJE/FJERNE ORD OG STYLE DEM
 // ============================================
+const isLoading = ref(true)
 
 const nameBox = ref({
   text: 'Anna Ellegaard',
@@ -39,6 +40,7 @@ onUnmounted(() => {
 })
 
 function initMatter() {
+  isLoading.value = false
   const Matter = window.Matter
   const {Engine, Render, Bodies, Composite, MouseConstraint, Mouse} = Matter
 
@@ -176,6 +178,10 @@ function initMatter() {
 
 <template>
   <div class="matter-box">
+    <div class="loading-overlay" v-if="isLoading">
+  <div class="loader"></div>
+</div>
+
     <!-- Anna Ellegaard boks - fast position -->
     <div class="name-box" :class="nameBox.class">
       {{ nameBox.text }}
@@ -252,4 +258,28 @@ function initMatter() {
 .text-yellow-100 {
   background-color: var(--color-yellow-100, #FFBC30);
 }
+
+.loading-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F5F5F5;
+  z-index: 9999;
+}
+
+.loader {
+  width: 40px;
+  height: 40px;
+  border: 6px solid #ccc;
+  border-top-color: #46FB47;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
 </style>
