@@ -25,7 +25,14 @@ const words = ref([
 let engine, render, runner
 let bodies = []
 
+// Shake detection variables
+const shakeThreshold = 15; // Juster sensitivitet her
+let lastShakeTime = 0;
+
 onMounted(() => {
+  // Indsæt shake event listener
+  window.addEventListener('devicemotion', handleDeviceMotion)
+
   const script = document.createElement('script')
   script.src = 'https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js'
   script.onload = () => setTimeout(initMatter, 200)
@@ -33,38 +40,69 @@ onMounted(() => {
 })
 
 onUnmounted(() => {
+  // Ryd op ved afmontering
+  window.removeEventListener('devicemotion', handleDeviceMotion)
   if (runner && window.Matter) {
     window.Matter.Render.stop(render)
     window.Matter.Runner.stop(runner)
   }
 })
 
+// Funktion til at håndtere device motion (shake)
+function handleDeviceMotion(event) {
+  const { acceleration } = event
+  const accX = acceleration.x || 0
+  const accY = acceleration.y || 0
+  const accZ = acceleration.z || 0
+
+  const totalAcc = Math.sqrt(accX * accX + accY * accY + accZ * accZ)
+
+  if (totalAcc > shakeThreshold) {
+    const now = Date.now()
+    if (now - lastShakeTime > 1000) { // debounce - 1 sekund
+      lastShakeTime = now
+      triggerShakeEffect()
+    }
+  }
+}
+
+// Funktion til at aktivere effekten ved shake
+function triggerShakeEffect() {
+  if (!bodies || bodies.length === 0) return
+  bodies.forEach(body => {
+    const forceMagnitude = 0.05
+    const forceX = (Math.random() - 0.5) * forceMagnitude
+    const forceY = (Math.random() - 0.5) * forceMagnitude
+    window.Matter.Body.applyForce(body, body.position, { x: forceX, y: forceY })
+  })
+}
+
 function initMatter() {
   isLoading.value = false
   const Matter = window.Matter
   const {Engine, Render, Bodies, Composite, MouseConstraint, Mouse} = Matter
 
-  // Create engine
+  // Opret engine
   engine = Engine.create()
   const world = engine.world
-  
-  // FORCE gravity settings - Reduced for realistic physics
+
+  // Gravity settings
   engine.gravity.x = 0
-  engine.gravity.y = 0.5  // REDUCED from 1
-  engine.gravity.scale = 0.001  // Standard Matter.js scale
-  
+  engine.gravity.y = 0.5
+  engine.gravity.scale = 0.001
+
   console.log('Gravity set to:', engine.gravity)
 
   const matterBox = document.querySelector('.matter-box')
   const nameElem = document.querySelector('.name-box')
   const wordElems = document.querySelectorAll('.word-box')
-  
+
   if (!matterBox || !nameElem || wordElems.length === 0) return
 
   const width = matterBox.clientWidth
   const height = matterBox.clientHeight
 
-  // Add walls
+  // Tilføj vægge
   Composite.add(world, [
     Bodies.rectangle(width / 2, height + 25, width, 50, { isStatic: true }),
     Bodies.rectangle(width / 2, -25, width, 50, { isStatic: true }),
@@ -72,34 +110,36 @@ function initMatter() {
     Bodies.rectangle(width + 25, height / 2, 50, height, { isStatic: true })
   ])
 
-  // Create Anna body - nederst i midten
+  // Opret Anna-body - nederst i midten
   const nameW = nameElem.offsetWidth
   const nameH = nameElem.offsetHeight
   const nameX = width / 2
   const nameY = height - 100
-  
+
   const nameBody = Bodies.rectangle(nameX, nameY, nameW, nameH)
   Composite.add(world, nameBody)
 
-  // Create word bodies - stablet ovenpå hinanden fra bunden
+  // Opret ord-kroppe - stablet ovenpå hinanden
   const wordBodies = []
-  let currentY = height - 200 // Start over Anna
-  
+  let currentY = height - 200
+
   wordElems.forEach((elem, i) => {
     const w = elem.offsetWidth
     const h = elem.offsetHeight
-    const x = width / 2 + (Math.random() - 0.5) * 200 // Lidt spredt omkring midten
-    
+    const x = width / 2 + (Math.random() - 0.5) * 200
+
     const body = Bodies.rectangle(x, currentY, w, h)
     Composite.add(world, body)
     wordBodies.push(body)
-    
-    currentY -= h + 10 // Næste boks lidt over
+
+    currentY -= h + 10
   })
 
-  console.log('Bodies created:', wordBodies.length + 1, 'Total in world:', world.bodies.length)
+  bodies = [nameBody, ...wordBodies] // Gem alle kroppe for shake-effekt
 
-  // Create renderer
+  console.log('Bodies created:', bodies.length, 'Total in world:', world.bodies.length)
+
+  // Renderer
   render = Render.create({
     element: matterBox,
     engine: engine,
@@ -112,7 +152,7 @@ function initMatter() {
 
   Render.run(render)
 
-  // Add mouse
+  // Tilføj mus
   const mouse = Mouse.create(render.canvas)
   const mouseConstraint = MouseConstraint.create(engine, {
     mouse,
@@ -121,38 +161,38 @@ function initMatter() {
   Composite.add(world, mouseConstraint)
   render.mouse = mouse
 
-  // Change cursor based on hover/grab
+  // Skift cursor ved hover/grab
   render.canvas.style.cursor = 'grab'
-  
+
   Matter.Events.on(mouseConstraint, 'mousedown', () => {
     if (mouseConstraint.body) {
       render.canvas.style.cursor = 'grabbing'
     }
   })
-  
+
   Matter.Events.on(mouseConstraint, 'mouseup', () => {
     render.canvas.style.cursor = 'grab'
   })
-  
+
   Matter.Events.on(mouseConstraint, 'startdrag', () => {
     render.canvas.style.cursor = 'grabbing'
   })
-  
+
   Matter.Events.on(mouseConstraint, 'enddrag', () => {
     render.canvas.style.cursor = 'grab'
   })
 
-  // Manual update loop
+  // Opdateringsloop
   let frameCount = 0
   function updatePhysics() {
     Engine.update(engine, 1000 / 60)
-    
+
     frameCount++
     if (frameCount === 1 || frameCount === 60) {
       console.log(`Frame ${frameCount}: Word 0 Y = ${wordBodies[0].position.y.toFixed(1)}, Velocity = ${wordBodies[0].velocity.y.toFixed(2)}`)
     }
 
-    // Update DOM
+    // Opdater DOM positioner
     nameElem.style.left = (nameBody.position.x - nameW / 2) + 'px'
     nameElem.style.top = (nameBody.position.y - nameH / 2) + 'px'
     nameElem.style.transform = `rotate(${nameBody.angle}rad)`
@@ -169,9 +209,9 @@ function initMatter() {
 
   updatePhysics()
 
-  // Log after 1 second
+  // Log efter 1 sekund
   setTimeout(() => {
-    console.log('After 1 sec - Word 0 Y:', wordBodies[0].position.y.toFixed(1))
+    console.log('Efter 1 sec - Word 0 Y:', wordBodies[0].position.y.toFixed(1))
   }, 1000)
 }
 </script>
