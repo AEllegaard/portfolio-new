@@ -61,9 +61,3 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Skjuler cursoren på alle mobile enheter */
-@media (pointer: coarse) {
-  body {
-    cursor: none;
-  }
-}

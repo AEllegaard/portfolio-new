@@ -6,19 +6,36 @@ import ScrollSmoother from "gsap/ScrollSmoother"
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
 
-// Cursor setup
-const cursor = document.createElement('div')
-cursor.classList.add('custom-cursor')
-document.body.appendChild(cursor)
+let cursor = null
+let cleanupCursor = () => {}
 
-const moveCursor = (e) => {
-  cursor.style.left = `${e.clientX}px`
-  cursor.style.top = `${e.clientY}px`
+const initCursor = () => {
+  if (!window.matchMedia('(pointer: coarse)').matches) {
+    cursor = document.createElement('div')
+    cursor.classList.add('custom-cursor')
+    document.body.appendChild(cursor)
+
+    const moveCursor = (e) => {
+      cursor.style.left = `${e.clientX}px`
+      cursor.style.top = `${e.clientY}px`
+    }
+
+    document.addEventListener('mousemove', moveCursor)
+
+    // Cleanup function
+    return () => {
+      document.removeEventListener('mousemove', moveCursor)
+      if (cursor) {
+        document.body.removeChild(cursor)
+      }
+    }
+  }
+  return () => {}
 }
 
 onMounted(() => {
-  // Cursor
-  document.addEventListener('mousemove', moveCursor)
+  // Initialize cursor only on non-mobile devices
+  cleanupCursor = initCursor()
 
   // GSAP ScrollSmoother
   ScrollSmoother.create({
@@ -30,8 +47,8 @@ onMounted(() => {
 })
 
 onUnmounted(() => {
-  document.removeEventListener('mousemove', moveCursor)
-  document.body.removeChild(cursor)
+  // Remove cursor if it exists
+  if (cleanupCursor) cleanupCursor()
 })
 </script>
 
@@ -105,5 +122,12 @@ onUnmounted(() => {
 
 .nav-text {
   font-size: 0.9rem;
+}
+
+/* Hide custom cursor on mobile devices */
+@media (pointer: coarse) {
+  .custom-cursor {
+    display: none !important;
+  }
 }
 </style>
