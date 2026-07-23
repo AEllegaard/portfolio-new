@@ -99,6 +99,23 @@
     ]
     },
     {
+        "dato": "2026",
+        "slug": "/skrobeligespor",
+        "kategori": "Game Design",
+        "title": "Skrøbelige Spor",
+        "preview": "/Projects/kiosk_room_mockup 1.png",
+        "hover": "/Projects/skrobeligespor.mp4",
+        "link": "",
+        "linktext": "",
+        "description": "Skrøbelige Spor (Fragile Traces) is a touchscreen installation for museum visitors, where scanning a physical artifact card found in the exhibitions unlocks a matching digital conservation task on a 3D model of a Bronze Age wild boar figurine. Visitors clean and preserve the object using tools mapped to real conservation techniques, learning by doing instead of reading a wall text. I was solo designer and developer, handling concept, visual identity, UX, and full Unity implementation. The core mechanic is a custom shader-based cleaning system built in Unity (URP), letting visitors brush away dirt from the model in real time, with a coverage-based system detecting when a task is actually complete. Barcode scanning bridges the physical cards to the digital experience. Visually, the project carries its own identity: Archivo typeface, a sky-to-earth color palette, and a logo built around a handprint motif tying into the 'touch and preserve' theme. Since the installation is meant for walk-up visitors with zero onboarding, the UX had to teach itself within the first ten seconds.",
+        "images": [
+            "/Projects/skrobeligespor.mp4",
+            "/Projects/teori.png",
+            "/Projects/F3. mockups 2.png",
+            "/Projects/kiosk_room_mockup 1.png"
+    ]
+    },
+    {
         "dato": "2025",
         "slug": "/GameJam2025",
         "kategori": "Game Design",
