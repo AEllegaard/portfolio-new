@@ -19,19 +19,21 @@
     },
     {
         "dato": "2025",
-        "slug": "/GameJam2025",
-        "kategori": "Game Design",
-        "title": "Mission Im-poo-ssible",
-        "preview": "/Projects/pooppreview.webp",
-        "hover": "/Projects/poosible.webm", 
-        "description": "During a four-week game design course taught by Henning Steinbock and Max Whrighton, we explored the fundamentals of game creation — from crafting engaging rules and player experiences to developing games in Unity. As part of the course, we participated in a one-day game jam, where my group created a lighthearted penguin fishing game. Later, we took part in a one-week game jam, during which we developed Mission Im-poo-ssible — a humorous game where you play as a dung beetle pushing a poo to the top of a mountain.", 
+        "slug": "/TrustMarket",
+        "kategori": "Branding",
+        "title": "TrustMarket",
+        "preview": "/Projects/trustpre.png",
+        "hover": "/Projects/trustmood.png",
+        "description": "Worked closely with Sine Munch to craft a visual identity that emphasizes simplicity, clarity, and user focus. Together we led the strategic design process, from research to defining the logo, color palette, and typography, ensuring these elements effectively communicate the brand’s core message. Oversaw the UI/UX development, translating user insights and business goals into intuitive interfaces and interactive features. Prototyped and tested iteratively to refine the experience, resulting in a seamless and engaging digital product that supports key objectives and delivers a great user experience. See the product here:",  
+        "link": "https://www.trustmarket.dk/",
+        "linktext": "TrustMarket",
         "images": [
-            "/Projects/pingu.webm",
-            "/Projects/playtesthenning.jpg",
-            "/Projects/processpoo.jpg",
-            "/Projects/pooppreview.webp",
-            "/Projects/pootest.webm",
-            "/Projects/poosible.webm"
+            "/Projects/trustpre.png",
+            "/Projects/trustmood.png",
+            "/Projects/trustfig.png",
+            "/Projects/trustfig2.png",
+            "/Projects/trustmarket.png",
+            "/Projects/trustmood2.png"
     ]
     },
     {
@@ -49,7 +51,21 @@
             "/Projects/firstskits.webp",
             "/Projects/skiter.webp",
             "/Projects/sidsteskits.webp"
-    ]
+        ]
+    },
+    {
+        "dato": "2025",
+        "slug": "/Stickerpicker",
+        "kategori": "Tool Build",
+        "title": "Sticker Picker",
+        "preview": "/Projects/stickerpicker.jpeg",
+        "hover": "/Projects/stickerpicker.jpeg", 
+        "description": "During my internship, Pauliina Kittilä and I built a playful sticker tool for online workshops in Miro. Participants can take a webcam photo and add silly accessories, paste it in to the Miro board to introduce themselves or vote on ideas. It was important to me to build the application where it would be most useful, and since Stupid Studio does all their collaborative work in Miro, turning it into an app within Miro made it easily accessible and integrated into their workflow. The thought behind is that a small moment of silliness can interrupt the rigid seriousness that often takes over online workshops. When something is silly, it’s not fully serious and that “not fully” can give people permission to try, fail, participate, or show a bit more of themselves without worrying too much about being judged.", 
+        "images": [
+            "/Projects/stickerpicker.jpeg",
+            "/Projects/Stickerprocess.png",
+            "/Projects/stickeruse.png"
+        ]
     },
     {
         "dato": "2024",
@@ -64,6 +80,39 @@
             "/Projects/CD-studiekort.webp",
             "/Projects/process.webp",
             "/Projects/helenakort.webp"
+        ]
+    },
+    {
+        "dato": "2023",
+        "slug": "/Poseclassification",
+        "kategori": "Machine Learning",
+        "title": "Pose Classification",
+        "preview": "/Projects/codefilter.webp",
+        "hover": "/Projects/Draw_your_own_filter_2.webm",
+        "link": "https://editor.p5js.org/AEllegaard/full/WvK5iN74DT",
+        "linktext": "Try it here.",
+        "description": "I used generative AI as a Material for my drawing app using pose classification to attach drawings to the body. The project was part of the Intelligent Design course at DMJX, exploring generative AI as a creative material.",  
+        "images": [
+            "/Projects/Draw_your_own_filter_2.webm",
+            "/Projects/codefilter.webp",
+            "/Projects/shotfilter.webp"
+    ]
+    },
+    {
+        "dato": "2025",
+        "slug": "/GameJam2025",
+        "kategori": "Game Design",
+        "title": "Mission Im-poo-ssible",
+        "preview": "/Projects/pooppreview.webp",
+        "hover": "/Projects/poosible.webm", 
+        "description": "Participated in a four-week game design course led by Henning Steinbock and Max Whrighton, focusing on the basics of game creation. From designing engaging rules and player experiences to developing games in Unity. During the course, a one-day game jam resulted in a lighthearted penguin fishing game and a subsequent one-week game jam led to the creation of 'Mission Im-poo-ssible', a humorous game where players control a dung beetle pushing a poo to the top of a mountain.", 
+        "images": [
+            "/Projects/poosible.webm",
+            "/Projects/pingu.webm",
+            "/Projects/playtesthenning.jpg",
+            "/Projects/processpoo.jpg",
+            "/Projects/pooppreview.webp",
+            "/Projects/pootest.webm"
     ]
     },
     {
@@ -85,22 +134,6 @@
             "/Projects/penplot.webm",
             "/Projects/scrubby.webm",
             "/Projects/face.webm"
-    ]
-    },
-    {
-        "dato": "2023",
-        "slug": "/Poseclassification",
-        "kategori": "Machine Learning",
-        "title": "Pose Classification",
-        "preview": "/Projects/codefilter.webp",
-        "hover": "/Projects/Draw_your_own_filter_2.webm",
-        "link": "https://editor.p5js.org/AEllegaard/full/WvK5iN74DT",
-        "linktext": "Try it here.",
-        "description": "I used generative AI as a Material for my drawing app using pose classification to attach drawings to the body. The project was part of the Intelligent Design course at DMJX, exploring generative AI as a creative material.",  
-        "images": [
-            "/Projects/Draw_your_own_filter_2.webm",
-            "/Projects/codefilter.webp",
-            "/Projects/shotfilter.webp"
     ]
     },
     {

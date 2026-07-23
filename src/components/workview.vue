@@ -6,7 +6,7 @@
     </h1>
 
     <!-- projekt header -->
-    <div class="md:mx-4 mt-30 font-display">
+    <div class="md:mx-4 mt-10 font-display">
       <div class="grid grid-cols-4 w-full items-center ml-2 font-display border-b-1">
         <h2 class="font-display font-light text-sm md:text-lg col-span-2 md:col-span-1">Title</h2>
         <h2 class="font-display font-light text-sm md:text-lg hidden md:block">Year</h2>
@@ -56,7 +56,7 @@
           <div class="flex flex-col md:flex-row w-full mt-1 mb-4 gap-6 md:gap-4">
             <!-- Text, 50% -->
             <div class="w-full md:w-1/2 ml-2 expand-col">
-              <p class="font-display font-light text-base text-justify w-full md:w-1/2 pr-4 expand-col break-words">
+              <p class="font-display font-light text-base text-justify w-full pr-4 expand-col break-words">
                 {{ project.description }}
                 <a class="bg-green-100 px-1 underline" target="_blank" :href="project.link"
                   >{{ project.linktext }}</a
