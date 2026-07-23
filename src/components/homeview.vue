@@ -25,12 +25,16 @@ const words = ref([
 let engine, render, runner
 let bodies = []
 
-// Shake detection variables
-const shakeThreshold = 15; // Juster sensitivitet her
-let lastShakeTime = 0;
+// Shake detection variabler
+const shakeThreshold = 15
+let lastShakeTime = 0
+
+// Variabel til at styre om shake er aktiveret
+const shakeActive = ref(false)
 
 onMounted(() => {
-  // Indsæt shake event listener
+  // Opret knap til aktivere shake
+  // Husk at tilføje en knap i template med @click="activateShake"
   window.addEventListener('devicemotion', handleDeviceMotion)
 
   const script = document.createElement('script')
@@ -40,7 +44,6 @@ onMounted(() => {
 })
 
 onUnmounted(() => {
-  // Ryd op ved afmontering
   window.removeEventListener('devicemotion', handleDeviceMotion)
   if (runner && window.Matter) {
     window.Matter.Render.stop(render)
@@ -48,8 +51,16 @@ onUnmounted(() => {
   }
 })
 
-// Funktion til at håndtere device motion (shake)
+// Funktion til at aktivere shake
+function activateShake() {
+  shakeActive.value = true
+  alert('Shake aktiveret! Ryst telefonen for at få effekten.')
+}
+
+// Håndtering af device motion
 function handleDeviceMotion(event) {
+  if (!shakeActive.value) return // Ignorer, hvis ikke aktivt
+
   const { acceleration } = event
   const accX = acceleration.x || 0
   const accY = acceleration.y || 0
@@ -59,14 +70,14 @@ function handleDeviceMotion(event) {
 
   if (totalAcc > shakeThreshold) {
     const now = Date.now()
-    if (now - lastShakeTime > 1000) { // debounce - 1 sekund
+    if (now - lastShakeTime > 1000) {
       lastShakeTime = now
       triggerShakeEffect()
     }
   }
 }
 
-// Funktion til at aktivere effekten ved shake
+// Funktion til at aktivere shake-effekt
 function triggerShakeEffect() {
   if (!bodies || bodies.length === 0) return
   bodies.forEach(body => {
@@ -135,7 +146,7 @@ function initMatter() {
     currentY -= h + 10
   })
 
-  bodies = [nameBody, ...wordBodies] // Gem alle kroppe for shake-effekt
+  bodies = [nameBody, ...wordBodies]
 
   console.log('Bodies created:', bodies.length, 'Total in world:', world.bodies.length)
 
@@ -152,7 +163,7 @@ function initMatter() {
 
   Render.run(render)
 
-  // Tilføj mus
+  // Mus
   const mouse = Mouse.create(render.canvas)
   const mouseConstraint = MouseConstraint.create(engine, {
     mouse,
@@ -161,9 +172,10 @@ function initMatter() {
   Composite.add(world, mouseConstraint)
   render.mouse = mouse
 
-  // Skift cursor ved hover/grab
+  // Skift cursor
   render.canvas.style.cursor = 'grab'
 
+  // Event for cursorændring
   Matter.Events.on(mouseConstraint, 'mousedown', () => {
     if (mouseConstraint.body) {
       render.canvas.style.cursor = 'grabbing'
@@ -219,8 +231,13 @@ function initMatter() {
 <template>
   <div class="matter-box">
     <div class="loading-overlay" v-if="isLoading">
-  <div class="loader"></div>
-</div>
+      <div class="loader"></div>
+    </div>
+    
+    <!-- Knap til shake -->
+    <button v-if="!shakeActive" @click="activateShake" style="position: absolute; z-index: 999; top: 10px; right: 10px;">
+      Aktiver Shake
+    </button>
 
     <!-- Anna Ellegaard boks - fast position -->
     <div class="name-box" :class="nameBox.class">
