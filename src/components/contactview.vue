@@ -1,13 +1,15 @@
 <template>
-  <div class="flex flex-col justify-end min-h-screen md:-mt-10 mx-4 mb-10">
-    <p class="font-display text-5xl md:text-96 md:leading-[100px] tracking-tight">
-      Hire me. Or just <a href="" target="_blank" class="text-green-100 underline hi-cursor">say hi</a>. <br> 
-      Follow me around on <a href="https://www.instagram.com/anna.cdesign?igsh=MWFldHhvbHg2YnYxcA%3D%3D&utm_source=qr" target="_blank" class="text-green-100 underline insta-cursor">Instagram</a>, 
-      <a href="https://www.behance.net/annaskytte" target="_blank" class="text-green-100 underline beha-cursor">Behance</a> or 
-      <a href="https://www.linkedin.com/in/anna-ellegaard/" target="_blank" class="text-green-100 underline linked-cursor">LinkedIn</a>. <br>
+  <div class="flex flex-col min-h-screen mx-4">
+    <p class="w-1/2 font-display font-light text-lg md:text-5xl  mt-30 tracking-tight">
+      In need of good ideas? <br>I've got plenty! <br> <br> </p>
+      <p class="w-1/2 font-display font-light text-lg md:text-3xl  mt-10 tracking-tight">
+      Follow me on <br> 
+      <a href="https://www.instagram.com/anna.cdesign?igsh=MWFldHhvbHg2YnYxcA%3D%3D&utm_source=qr" target="_blank" class="bg-green-100 underline decoration-2 px-1">Instagram</a>, <br>
+      <a href="https://www.behance.net/annaskytte" target="_blank" class="bg-green-100 underline decoration-2 px-1">Behance</a>, <br>
+      <a href="https://www.linkedin.com/in/anna-ellegaard/" target="_blank" class="bg-green-100 underline decoration-2 px-1">LinkedIn</a>. <br><br>
       Do you like email? 
-      <a href="#" class="text-green-100 underline write-cursor" @click.prevent="copyEmail">Write me one</a>. <br>
-      Or <span class="text-green-100 dont-cursor">don't</span>.
+      <a href="#" class="bg-green-100 underline decoration-2 px-1 write-cursor" @click.prevent="copyEmail">Write me one.</a> <br>
+      Or <span class="">don't</span>.
     </p>
   </div>
 </template>
@@ -18,9 +20,9 @@ export default {
     copyEmail() {
       const email = "annaeskytte@gmail.com"; // Skift til din e-mail
       navigator.clipboard.writeText(email).then(() => {
-        alert("E-mail kopieret til udklipsholder! 📋");
+        alert("E-mail copied");
       }).catch(err => {
-        console.error("Kunne ikke kopiere e-mail: ", err);
+        console.error("Could not copy email: ", err);
       });
     }
   }

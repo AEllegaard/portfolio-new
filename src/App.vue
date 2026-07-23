@@ -54,7 +54,7 @@ onUnmounted(() => {
 
 <template>
   <header class="flex w-full font-display font-light sticky top-0 z-50 bg-back-100">
-    <nav class="h-10 flex items-center justify-center md:justify-end gap-6 md:gap-8 md:px-9 w-full py-6">
+    <nav class="h-10 flex items-center justify-center md:justify-end gap-6 md:gap-8 md:px-9 w-full py-6 ">
       <router-link to="/" class="nav-item">
         <span class="radio-circle"></span>
         <span class="nav-text">Home</span>
@@ -88,6 +88,10 @@ onUnmounted(() => {
   color: #000;
   font-size: 1rem;
   transition: all 0.2s ease;
+}
+
+.nav-item:hover {
+  opacity: 0.5;
 }
 
 .radio-circle {

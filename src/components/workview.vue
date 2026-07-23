@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="font-display font-light mx-4 mt-20 text-lg md:text-5xl md:leading-[70px] tracking-tight">
+    <h1 class="font-display font-light mx-4 mt-30 text-lg md:text-5xl md:leading-[70px] tracking-tight">
       All my projects - <br />
       <span class="like-cursor bg-green-100 p-1">That I like.</span>
     </h1>
