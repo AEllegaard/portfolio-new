@@ -8,47 +8,33 @@
     <!-- projekt header -->
     <div class="md:mx-4 mt-30 font-display">
       <div class="grid grid-cols-4 w-full items-center ml-2 font-display border-b-1">
-        <h2 class="font-display font-light text-sm md:text-lg">Title</h2>
-        <h2 class="font-display font-light text-sm md:text-lg">Date</h2>
+        <h2 class="font-display font-light text-sm md:text-lg col-span-2 md:col-span-1">Title</h2>
+        <h2 class="font-display font-light text-sm md:text-lg hidden md:block">Year</h2>
         <h2 class="font-display font-light text-sm md:text-lg -ml-1">Category</h2>
       </div>
 
       <!-- projekt liste -->
       <div v-for="project in projects" :key="project.slug">
         <div
-          class="flex h-10 w-full cursor-pointer"
+          class="flex h-9 md:h-10 w-full cursor-pointer"
           @click="toggleProject(project.slug)"
           @mouseover="handleMouseOver(project.hover)"
           @mousemove="updatePosition"
           @mouseleave="handleMouseLeave"
         >
           <div class="grid grid-cols-4 w-full items-center mt-2 ml-2 font-display hover:opacity-50">
-            <h2
-              class="font-display font-light"
-              :class="{
-                'text-sm md:text-lg': expandedProjectSlug !== project.slug,
-                'text-lg md:text-lg': expandedProjectSlug === project.slug,
-              }"
-            >
+            <h2 class="font-display font-light text-sm md:text-lg col-span-2 md:col-span-1">
               {{ project.title }}
             </h2>
 
             <h2
-              class="font-display font-light"
-              :class="{
-                'text-sm md:text-lg': expandedProjectSlug !== project.slug,
-                'text-lg md:text-lg': expandedProjectSlug === project.slug,
-              }"
+              class="font-display font-light text-sm md:text-lg hidden md:block"
             >
               {{ project.dato }}
             </h2>
 
             <h2
-              class="font-display font-light"
-              :class="{
-                'text-sm md:text-lg': expandedProjectSlug !== project.slug,
-                'text-lg md:text-lg': expandedProjectSlug === project.slug,
-              }"
+              class="font-display font-light text-sm md:text-lg"
             >
               {{ project.kategori }}
             </h2>
@@ -64,15 +50,15 @@
         <!-- Expanded project info: 50/50 text and slideshow -->
         <div
           v-if="expandedProjectSlug === project.slug"
-          class="border-t-0.5 border-green-100 overflow-hidden"
+          class="border-t-0.5 border-green-100 overflow-hidden bg-gray-200 mt-4"
           :ref="el => expandedBoxes[project.slug] = el"
         >
-          <div class="flex flex-col md:flex-row w-full mt-4 mb-6 gap-6 md:gap-4">
+          <div class="flex flex-col md:flex-row w-full mt-1 mb-4 gap-6 md:gap-4">
             <!-- Text, 50% -->
             <div class="w-full md:w-1/2 ml-2 expand-col">
-              <p class="font-display font-light text-base text-justify">
+              <p class="font-display font-light text-base text-justify w-full md:w-1/2 pr-4 expand-col break-words">
                 {{ project.description }}
-                <a class="text-green-100 underline" target="_blank" :href="project.link"
+                <a class="bg-green-100 px-1 underline" target="_blank" :href="project.link"
                   >{{ project.linktext }}</a
                 >
               </p>

@@ -1,5 +1,5 @@
 <template>
-  <div class="w-2/3 pb-12 ">
+  <div class="md:w-2/3 pb-12 ">
     <div class="flex justify-between">
       <h1 class="w-1/2 font-display font-light text-lg md:text-5xl ml-4 md:mx-4 mt-30 tracking-tight">A little background - </h1>
     </div>
@@ -18,91 +18,91 @@ I’m all about owning my projects, working well with others, and picking up new
 <div class="mt-5 grid grid-cols-4 items-center">
   <!-- First row -->
   <div class="col-span-2">
-    <p class="bg-green-100 inline-block font-light text-xl px-1 py-0">Freelance</p>
+    <p class="bg-green-100 inline-block font-light  md:text-xl px-1 py-0">Freelance</p>
   </div>
   <div class="col-span-1">
-    <p class="font-light text-lg"></p>
+    <p class="font-light text-sm md:text-lg"></p>
   </div>
   <div class="col-span-1">
-    <p class="font-light text-lg">2022 - now</p>
+    <p class="font-light text-sm md:text-lg">2022 - now</p>
   </div>
 </div>
 
 <div class="mt-5 grid grid-cols-4 items-center">
   <!-- First row -->
   <div class="col-span-2">
-    <p class="bg-green-100 inline-block font-light text-xl px-1 py-0">Digital Designer & Marketing Assistant</p>
+    <p class="bg-green-100 inline-block font-light  md:text-xl px-1 py-0">Digital Designer</p>
   </div>
   <div class="col-span-1">
-    <p class="font-light text-lg">Kombination</p>
+    <p class="font-light text-sm md:text-lg">Kombination</p>
   </div>
   <div class="col-span-1">
-    <p class="font-light text-lg">Mar '26 - now</p>
+    <p class="font-light text-sm md:text-lg">Mar '26 - now</p>
   </div>
 </div>
 
 <div class="mt-5 grid grid-cols-4  items-center">
   <!-- Second row -->
   <div class="col-span-2">
-    <p class="bg-green-100 inline-block font-light text-xl px-1 py-0">Creative Technologist Intern</p>
+    <p class="bg-green-100 inline-block font-light md:text-xl px-1 py-0">Creative Tech Intern</p>
   </div>
   <div class="col-span-1">
-    <p class="font-light text-lg">Stupid Studio</p>
+    <p class="font-light text-sm md:text-lg">Stupid Studio</p>
   </div>
   <div class="col-span-1">
-    <p class="font-light text-lg">Oct '25 - Mar '26</p>
+    <p class="font-light text-sm md:text-lg">Oct '25 - Mar '26</p>
   </div>
 </div>
 
 <div class="mt-5 grid grid-cols-4  items-center">
   <!-- Second row -->
   <div class="col-span-2">
-    <p class="bg-green-100 inline-block font-light text-xl px-1 py-0">Marketing Assistant</p>
+    <p class="bg-green-100 inline-block font-light md:text-xl px-1 py-0">Marketing Assistant</p>
   </div>
   <div class="col-span-1">
-    <p class="font-light text-lg">SKAARHOJ</p>
+    <p class="font-light text-sm md:text-lg">SKAARHOJ</p>
   </div>
   <div class="col-span-1">
-    <p class="font-light text-lg">Mar '25 - Oct '25</p>
+    <p class="font-light text-sm md:text-lg">Mar '25 - Oct '25</p>
   </div>
 </div>
 
 <div class="mt-5 grid grid-cols-4  items-center">
   <!-- Second row -->
   <div class="col-span-2">
-    <p class="bg-green-100 inline-block font-light text-xl px-1 py-0">Marketing Assistant</p>
+    <p class="bg-green-100 inline-block font-light md:text-xl px-1 py-0">Marketing Assistant</p>
   </div>
   <div class="col-span-1">
-    <p class="font-light text-lg">TSG Nordic</p>
+    <p class="font-light text-sm md:text-lg">TSG Nordic</p>
   </div>
   <div class="col-span-1">
-    <p class="font-light text-lg">Jun '24 - Mar '25</p>
+    <p class="font-light text-sm md:text-lg">Jun '24 - Mar '25</p>
   </div>
 </div>
 
 <div class="mt-5 grid grid-cols-4  items-center">
   <!-- Second row -->
   <div class="col-span-2">
-    <p class="bg-green-100 inline-block font-light text-xl px-1 py-0">Multimedia Designer</p>
+    <p class="bg-green-100 inline-block font-light md:text-xl px-1 py-0">Multimedia Designer</p>
   </div>
   <div class="col-span-1">
-    <p class="font-light text-lg">Hired freelance</p>
+    <p class="font-light text-sm md:text-lg">Hired freelance</p>
   </div>
   <div class="col-span-1">
-    <p class="font-light text-lg">Jun '23 - Apr '24</p>
+    <p class="font-light text-sm md:text-lg">Jun '23 - Apr '24</p>
   </div>
 </div>
 
 <div class="mt-5 grid grid-cols-4  items-center">
   <!-- Second row -->
   <div class="col-span-2">
-    <p class="bg-green-100 inline-block font-light text-xl px-1 py-0">Graphic Designer</p>
+    <p class="bg-green-100 inline-block font-light md:text-xl px-1 py-0">Graphic Designer</p>
   </div>
   <div class="col-span-1">
-    <p class="font-light text-lg">Park Styling</p>
+    <p class="font-light text-sm md:text-lg">Park Styling</p>
   </div>
   <div class="col-span-1">
-    <p class="font-light text-lg">Oct '21 - Jun '23</p>
+    <p class="font-light text-sm md:text-lg">Oct '21 - Jun '23</p>
   </div>
 </div>
 
@@ -116,11 +116,11 @@ I’m all about owning my projects, working well with others, and picking up new
 <div class="mt-5 grid grid-cols-4 items-center">
   <!-- First row -->
   <div class="col-span-3">
-    <p class="bg-green-100 inline-block font-light text-xl px-1 py-0 underline"><a href="https://www.superultra.dk/posts/2024/12/05/teaching-genai">Teaching Designers to use Generative AI as a Material</a></p>
+    <p class="bg-green-100 inline-block font-light md:text-xl px-1 py-0 underline"><a href="https://www.superultra.dk/posts/2024/12/05/teaching-genai">Teaching Designers to use Generative AI as a Material</a></p>
   </div>
  
   <div class="col-span-1">
-    <p class="font-light text-lg">2022 - now</p>
+    <p class="font-light text-sm md:text-lg justify-self-end md:justify-self-start">2022 - now</p>
   </div>
 </div>
 </div>
@@ -133,26 +133,26 @@ I’m all about owning my projects, working well with others, and picking up new
 <div class="mt-5 grid grid-cols-4 items-center">
   <!-- First row -->
   <div class="col-span-2">
-    <p class="bg-green-100 inline-block font-light text-xl px-1 py-0">BA in Coded Design</p>
+    <p class="bg-green-100 inline-block font-light md:text-xl px-1 py-0">BA in Coded Design</p>
   </div>
   <div class="col-span-1">
-    <p class="font-light text-lg">DMJX</p>
+    <p class="font-light text-sm md:text-lg">DMJX</p>
   </div>
   <div class="col-span-1">
-    <p class="font-light text-lg">2023 - 2026</p>
+    <p class="font-light text-sm md:text-lg justify-self-end md:justify-self-start">2023 - 2026</p>
   </div>
 </div>
 
 <div class="mt-5 grid grid-cols-4 items-center">
   <!-- First row -->
   <div class="col-span-2">
-    <p class="bg-green-100 inline-block font-light text-xl px-1 py-0">AP Degree Multimedia Design</p>
+    <p class="bg-green-100 inline-block font-light md:text-xl px-1 py-0">AP Multimedia Design</p>
   </div>
   <div class="col-span-1">
-    <p class="font-light text-lg">IBA Kolding</p>
+    <p class="font-light text-sm md:text-lg">IBA Kolding</p>
   </div>
   <div class="col-span-1">
-    <p class="font-light text-lg">2020 - 2022</p>
+    <p class="font-light text-sm md:text-lg justify-self-end md:justify-self-start">2020 - 2022</p>
   </div>
 </div>
 </div>
