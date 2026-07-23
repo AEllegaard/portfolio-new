@@ -240,7 +240,7 @@ export default {
       this.openProject(slug);
     },
 
-    openProject(slug) {
+ openProject(slug) {
   this.expandedProjectSlug = slug;
   this.slideIndexes[slug] = 0;
 
@@ -265,10 +265,14 @@ export default {
           box.style.transition = 'height 0.3s ease';
           box.style.height = 'auto';
 
-          // After height transition, scroll smoothly into view
+          // Calculate the target scroll position
+          const rect = box.getBoundingClientRect();
+          const targetY = window.pageYOffset + rect.top + (this.isTouchDevice ? -50 : 0);
+
+          // Scroll smoothly to the target position
           gsap.to(window, {
             duration: this.scrollDelay,
-            scrollTo: box,
+            scrollTo: { y: targetY },
             ease: "power2.out",
             onComplete: () => {
               // Clean up transition
